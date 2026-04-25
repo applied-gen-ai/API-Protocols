@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package embedding;
+
+// The service
+service EmbeddingService {
+  // Send text, get embeddings
+  rpc GetEmbedding (EmbeddingRequest) returns (EmbeddingResponse);
+}
+
+// Input message
+message EmbeddingRequest {
+  string text = 1;
+}
+
+// Output message
+message EmbeddingResponse {
+  repeated float embedding = 1;
+}
